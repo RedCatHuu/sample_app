@@ -36,6 +36,15 @@ class ListsController < ApplicationController
     #updateについての
   end 
   
+  def create
+    @list = List.new(list_params)
+    if @list.save
+      redirect_to list_path(@list.id)
+    else
+      render :new
+    end 
+  end 
+  
   def destroy
     list = List.find(params[:id])
     list.destroy

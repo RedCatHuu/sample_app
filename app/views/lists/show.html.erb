@@ -5,11 +5,7 @@
 <p><%= @list.body %></p>
 
 <h2>画像</h2>
-<% if @list.image.attached? %>
-  <%= image_tag @list.image, size: "800x800" %>
-<% else %>
-  <%= image_tag 'no_image', size: "300x300" %>
-<% end %>
+<%= image_tag @list.image, size: "300x300" %>
 
 <!--「x」は「かける」ではなく、「エックス」--->
 
