@@ -30,6 +30,11 @@
     </nav>
     
     <main>
+      <!--キーをmessage_type、値をmessageにそれぞれ代入
+      キーは notice　値は "投稿に成功しました"　など-->
+      <% flash.each do |message_type, message| %>
+        <div class="flash-message <%= message_type %>"><%= message %></div>
+      <% end %>
       <%= yield %>
     </main>
     
